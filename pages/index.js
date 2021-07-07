@@ -1,7 +1,34 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
-import Navbar from '../components/navbar'
+import Navbar from "../components/navbar";
+
+const cardListData = [
+  {
+    cryptocurrency: "Bitcoin",
+    ticker: "BTC",
+    price: "35.000 usd",
+    color: "green",
+  },
+  {
+    cryptocurrency: "Ethereum",
+    ticker: "ETH",
+    price: "2.300 usd",
+    color: "green",
+  },
+  {
+    cryptocurrency: "Litecoin",
+    ticker: "LTC",
+    price: "140 usd",
+    color: "red",
+  },
+  {
+    cryptocurrency: "Binace Coin",
+    ticker: "BNB",
+    price: "330 usd",
+    color: "yellow",
+  },
+];
 
 export default function Home() {
   return (
@@ -10,25 +37,29 @@ export default function Home() {
         <title>Crypto coin App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Navbar/>
-
+      <div>
+        <Navbar cryptocurrency="BTC" />
+      </div>
       <footer className={styles.footer}>
         <a
           href="https://pokemoon.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Target {' '}
-          <img src="https://pokemoon.netlify.app/favicon.ico" alt="Vercel Logo" className={styles.logo} />
+          Target{" "}
+          <img
+            src="https://pokemoon.netlify.app/favicon.ico"
+            alt="Vercel Logo"
+            className={styles.logo}
+          />
         </a>
       </footer>
     </div>
-  )
+  );
 }
 
-
-{/* <main className={styles.main}>
+{
+  /* <main className={styles.main}>
 
 <h1>HELLO WORLD!</h1>
 
@@ -70,4 +101,5 @@ export default function Home() {
     </p>
   </a>
 </div>
-</main> */}
+</main> */
+}

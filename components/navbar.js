@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
-function Navbar() {
-    return (
-        <>
-        <h1>Hello World!</h1>
-        </>
-    );
+function Navbar(props) {
+    console.log(props);
+  return (
+    <>
+      <div>{props.cryptocurrency}</div>
+    </>
+  );
 }
 
 export default Navbar;
