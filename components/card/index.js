@@ -1,7 +1,7 @@
 import React from "react";
 
-import styles from "../styles/Home.module.css";
-// import card from "../styles/card.css"; // por que no puedo hacer esto??
+import styles from "styles/Home.module.css";
+import card from "./Card.module.css";
 
 function Card(props) {
   console.log(props);
