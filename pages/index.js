@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import Navbar from "../components/navbar";
+import Card from "../components/card";
 
 const cardListData = [
   {
@@ -37,8 +37,8 @@ export default function Home() {
         <title>Crypto coin App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Navbar cryptocurrency="BTC" />
+      <div className={styles.container}>
+        <Card cryptocurrency="BTC" />
       </div>
       <footer className={styles.footer}>
         <a
