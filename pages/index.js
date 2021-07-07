@@ -38,7 +38,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        <Card cryptocurrency="BTC" />
+        <Card cryptocurrency="Bitcoin" ticker="BTC" />
       </div>
       <footer className={styles.footer}>
         <a
