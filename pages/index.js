@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Head from "next/head";
 import styles from "styles/Home.module.css";
 
@@ -31,6 +32,19 @@ const cardListData = [
 ];
 
 export default function Home() {
+
+  const [coins, setCoins] = useState([]);
+
+  useEffect(() => {
+    try {
+      fetch('/api/coins')
+        .then(response => response.json())
+        .then(data => { console.log(data.data); setCoins(data.data)});
+    } catch (error) {
+        console.error(error);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -38,7 +52,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        <Card cryptocurrency="Bitcoin" ticker="BTC" />
+        { coins && coins.map(coin => (           
+            <Card key={coin.key + coin.name} cryptocurrency={coin.name} ticker={coin.symbol} />
+          ))
+        }
       </div>
       <footer className={styles.footer}>
         <a
