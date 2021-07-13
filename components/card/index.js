@@ -3,20 +3,31 @@ import React from "react";
 import styles from "styles/Home.module.css";
 import card from "./Card.module.css";
 
-function Card(props) {
-  console.log(props);
+function Card({ symbol, name, percent_change_24h, price_usd }) {
   return (
     <>
-      <div className={styles.card}>
-        <img
-          src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG48.png"
-          className={styles.logoByGabo}
-        />
-        <h1 className={styles.title}>{props.ticker}</h1>
-        <h3 className={styles.title}>{props.cryptocurrency}</h3>
+      <div className = {card.cardSingle}>
+
+        <div className = {card.cardLeftBody}>
+          <h1>{symbol}</h1>
+          <h2>${price_usd}</h2>
+          <h1>{percent_change_24h} %</h1>
+        </div>
+
+        <div className = {card.cardRightBody}>
+          <div className = {card.cardCryptoLogo}>
+            <img
+              src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG48.png"
+            />
+          </div>
+          <h3>{name}</h3>
+        </div>
+
       </div>
     </>
   );
 }
+
+// TODO modificar css cuando el name es muy largo. Se rompe
 
 export default Card;
