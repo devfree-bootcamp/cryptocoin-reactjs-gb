@@ -28,6 +28,4 @@ function Card({ symbol, name, percent_change_24h, price_usd }) {
   );
 }
 
-// TODO modificar css cuando el name es muy largo. Se rompe
-
 export default Card;

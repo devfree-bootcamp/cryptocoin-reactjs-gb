@@ -126,6 +126,10 @@
   height: 1em;
 }
 
+.logoByGabo {
+  height: 6em;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
