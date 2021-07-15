@@ -4,33 +4,6 @@ import styles from "styles/Home.module.css";
 
 import Card from "components/card";
 
-const cardListData = [
-  {
-    cryptocurrency: "Bitcoin",
-    ticker: "BTC",
-    price: "35.000 usd",
-    color: "green",
-  },
-  {
-    cryptocurrency: "Ethereum",
-    ticker: "ETH",
-    price: "2.300 usd",
-    color: "green",
-  },
-  {
-    cryptocurrency: "Litecoin",
-    ticker: "LTC",
-    price: "140 usd",
-    color: "red",
-  },
-  {
-    cryptocurrency: "Binace Coin",
-    ticker: "BNB",
-    price: "330 usd",
-    color: "yellow",
-  },
-];
-
 export default function Home() {
 
   const [coins, setCoins] = useState([]);
@@ -51,12 +24,26 @@ export default function Home() {
         <title>Crypto coin App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* Por que se pone coins && ?? */}
       <div className={styles.container}>
-        { coins && coins.map(coin => (           
-            <Card key={coin.key + coin.name} cryptocurrency={coin.name} ticker={coin.symbol} />
+        { coins && coins.map(({ id, symbol, name, nameid, percent_change_24h, price_usd }) => (           
+            <Card 
+            key={id + nameid} 
+            name={name} 
+            symbol={symbol} 
+            percent_change_24h = {percent_change_24h}
+            price_usd = {price_usd}
+            />
           ))
         }
       </div>
+
+      {/* Para modificar el Card */}
+      {/* <div className={styles.container}>
+        <Card cryptocurrency={"Binace Coin"} ticker={"BNB"} price={"12000"} today={"2.5"} />
+      </div> */}
+
       <footer className={styles.footer}>
         <a
           href="https://pokemoon.netlify.app/"
@@ -73,50 +60,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-
-{
-  /* <main className={styles.main}>
-
-<h1>HELLO WORLD!</h1>
-
-<h1 className={styles.title}>
-  Welcome to <a href="https://nextjs.org">Next.js!</a>
-</h1>
-
-<p className={styles.description}>
-  Get started by editing{' '}
-  <code className={styles.code}>pages/index.js</code>
-</p>
-
-<div className={styles.grid}>
-  <a href="https://nextjs.org/docs" className={styles.card}>
-    <h3>Documentation &rarr;</h3>
-    <p>Find in-depth information about Next.js features and API.</p>
-  </a>
-
-  <a href="https://nextjs.org/learn" className={styles.card}>
-    <h3>Learn &rarr;</h3>
-    <p>Learn about Next.js in an interactive course with quizzes!</p>
-  </a>
-
-  <a
-    href="https://github.com/vercel/next.js/tree/master/examples"
-    className={styles.card}
-  >
-    <h3>Examples &rarr;</h3>
-    <p>Discover and deploy boilerplate example Next.js projects.</p>
-  </a>
-
-  <a
-    href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-    className={styles.card}
-  >
-    <h3>Deploy &rarr;</h3>
-    <p>
-      Instantly deploy your Next.js site to a public URL with Vercel.
-    </p>
-  </a>
-</div>
-</main> */
 }
