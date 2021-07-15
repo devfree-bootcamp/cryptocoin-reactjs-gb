@@ -39,7 +39,7 @@ a.title {
     transition: color 0.15s ease, border-color 0.15s ease;
     height: 15rem;
     max-width: 20rem;
-    max-height: 22rem;
+    /* max-height: 22rem; */
 
     display: flex;
     flex-direction: row;
