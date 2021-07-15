@@ -4,33 +4,6 @@ import styles from "styles/Home.module.css";
 
 import Card from "components/card";
 
-const cardListData = [
-  {
-    cryptocurrency: "Bitcoin",
-    ticker: "BTC",
-    price: "35.000 usd",
-    color: "green",
-  },
-  {
-    cryptocurrency: "Ethereum",
-    ticker: "ETH",
-    price: "2.300 usd",
-    color: "green",
-  },
-  {
-    cryptocurrency: "Litecoin",
-    ticker: "LTC",
-    price: "140 usd",
-    color: "red",
-  },
-  {
-    cryptocurrency: "Binace Coin",
-    ticker: "BNB",
-    price: "330 usd",
-    color: "yellow",
-  },
-];
-
 export default function Home() {
 
   const [coins, setCoins] = useState([]);
@@ -51,12 +24,26 @@ export default function Home() {
         <title>Crypto coin App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* Por que se pone coins && ?? */}
       <div className={styles.container}>
-        { coins && coins.map(coin => (           
-            <Card key={coin.key + coin.name} cryptocurrency={coin.name} ticker={coin.symbol} />
+        { coins && coins.map(({ id, symbol, name, nameid, percent_change_24h, price_usd }) => (           
+            <Card 
+            key={id + nameid} 
+            name={name} 
+            symbol={symbol} 
+            percent_change_24h = {percent_change_24h}
+            price_usd = {price_usd}
+            />
           ))
         }
       </div>
+
+      {/* Para modificar el Card */}
+      {/* <div className={styles.container}>
+        <Card cryptocurrency={"Binace Coin"} ticker={"BNB"} price={"12000"} today={"2.5"} />
+      </div> */}
+
       <footer className={styles.footer}>
         <a
           href="https://pokemoon.netlify.app/"
@@ -73,4 +60,5 @@ export default function Home() {
       </footer>
     </div>
   );
+
 }
