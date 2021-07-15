@@ -37,6 +37,7 @@ a.title {
     border: 1px solid #eaeaea;
     border-radius: 50px;
     transition: color 0.15s ease, border-color 0.15s ease;
+
     height: 15rem;
     max-width: 20rem;
     /* max-height: 22rem; */
