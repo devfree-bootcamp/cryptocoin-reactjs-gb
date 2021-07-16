@@ -26,22 +26,26 @@ export default function Home() {
       </Head>
 
       {/* Por que se pone coins && ?? */}
-      <div className={styles.container}>
-        { coins && coins.map(({ id, symbol, name, nameid, percent_change_24h, price_usd }) => (           
-            <Card 
-            key={id + nameid} 
-            name={name} 
-            symbol={symbol} 
-            percent_change_24h = {percent_change_24h}
-            price_usd = {price_usd}
-            />
-          ))
-        }
-      </div>
+        <div className={styles.container}>
+          { coins && coins.map(({ id, symbol, name, nameid, percent_change_24h, price_usd }) => (           
+              <Card 
+              key={id + nameid} 
+              name={name} 
+              symbol={symbol} 
+              percent_change_24h = {percent_change_24h}
+              price_usd = {price_usd}
+              />
+            ))
+          }
+        </div>
 
       {/* Para modificar el Card */}
       {/* <div className={styles.container}>
-        <Card cryptocurrency={"Binace Coin"} ticker={"BNB"} price={"12000"} today={"2.5"} />
+        <Card name={"Basic Token"} 
+        symbol={"BAT"}  
+        percent_change_24h={"13.02 "} 
+        price_usd={"0.554322"}
+        />
       </div> */}
 
       <footer className={styles.footer}>
